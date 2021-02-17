@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Nave animada</title>
+    <link rel="stylesheet" href="canvas.css">
+  </head>
+  <body>
+
+  <div id="mainmenu" style="display:inline;">
+    <center>
+      <span>
+        <h1>
+          Asteroid Belt
+        </h1>
+      </span>
+      <br>
+      <span id="maxscore">
+        Top Score: 0
+      </span>
+      <br>
+      <span id="maxspeed">
+        Top Speed: 0 km/hr
+      </span>
+
+      <br>
+
+      <span id="death"></span>
+
+      <br>
+      <br>
+      <span>Avoid the asteroids.</span>
+      <br>
+      <span>You can move using the arrow keys or using wasd.</span>
+      <br>
+      <span>
+        -Press the spacebar to begin-
+      </span>
+    </center>
+  </div>
+  <div id="overlay">
+    <p id="score">
+      Score: 0
+    </p>
+    <p id="speed">
+      100 km/hr
+    </p>
+  </div>
+	<canvas id="glcanvas" height="600" width="800"></canvas>
+	<script src="gl-matrix.js"></script>
+    <script src="./bezier.js"></script>
+    <script src="js/draw.js"></script>
+    <script src="js/interaction.js"></script>
+    <script src="js/loader.js"></script>
+	<script src="nave.js"></script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<div class="col-lg-12">
+    <h6>Computacion Visual Interactiva-Ejercicio 3</h6>
+    <h4><a href="../index.html">Home</a>&gt; <a href="../blog.html">Blog</a>&gt; Nave espacial 2
+    </h4>
+    <p>Utilizando el modelo de la nave espacial se creó un canvas interactivo en el cual la nave
+        espacial se mueve si haces clic sobre el canvas, o se mueve si tienes el canvas seleccionado
+        y presionas una flecha en el teclado. El movimiento con las flechas busca simular el
+        sentimiento de momentum al volar la nave espacial, y se podrá utilizar en el futuro juego.
+    </p>
+    <p>Para ubicar la posición en la que se encuentra el mouse se utiliza un event listener tipo
+        onclick que detecta cuando se hace clic sobre el canvas. Se utiliza el comando offsetWidth y
+        offsetHeight para encontrar la posicion en pixeles del evento. Luego se hace una conversión
+        de un sistema de coordenadas [+x,-y] a un sistema de coordenadas [+x,+y], colocando el
+        centro logico en el centro del canvas. Finalmente se cambia la escala de las coordenadas
+        dividiendo por 100. Se utilizan las coordenadas viejas y las coordenadas nuevas para
+        transladar el elemento al nuevo centro.</p>
+    <p>Para el movimiento utilizando las flechas del teclado se utiliza un event listener tipo
+        onKeyDown. Guarda el estado de cada flecha para que unicamente haga un movimiento con cada
+        tecla (Para que no se repita el tecleado). Finalmente cuando se levanta la tecla con el
+        evento onKeyUp se genera un movimiento para deshacer el original.</p>
+    <iframe width="100%" height="800" src="https://jsfiddle.net/felipecuetor/19jpqbo1/embedded/js,html,result/"
+        allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+</div>

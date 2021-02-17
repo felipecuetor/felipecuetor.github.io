@@ -1,0 +1,90 @@
+<div class="col-lg-12">
+   <h6>Computacion Visual Interactiva-Proyecto Final</h6>
+   <h4><a href="../index.html">Home</a>&gt; <a href="../blog.html">Blog</a>&gt; Nave espacial y planeta</h4>
+   <p>
+      Utilizando tecnologias de procedual generation, se implementará un juego simple de vuelo.
+      El usuario la podrá controlar utilizando las teclas wasd para la inclicacion de la nave y las flechas modificarán
+      su momentum en diferentes direcciones.
+      En el centro de la pantalla se podrá observar una nave espacial que reacciona a los movimientos generados por el
+      usuario.
+      Se generará un modelo de un sistema solar utilizando esferas, y se agregarán imperfecciones a las esferas
+      utilizando procedual generation.
+      También se generará una textura continua para cada planeta.
+      <br>Ejemplos similares:
+      <br><a
+         href="http://store.steampowered.com/app/314230/Rodina/">http://store.steampowered.com/app/314230/Rodina/.</a>
+      <br>
+      Ejemplos de generacion de procedimientos:
+      <br>
+      <br><a href="https://github.com/darosh/glt">https://github.com/darosh/glt</a>
+      <br><a href="https://github.com/Erkaman/gl-rock">https://github.com/Erkaman/gl-rock</a>
+      <br><a
+         href="https://open.bekk.no/procedural-planet-in-webgl-and-three-js">https://open.bekk.no/procedural-planet-in-webgl-and-three-js</a>
+      <br><a
+         href="http://learningthreejs.com/blog/2013/08/02/how-to-do-a-procedural-city-in-100lines/">http://learningthreejs.com/blog/2013/08/02/how-to-do-a-procedural-city-in-100lines/</a>
+      <br><a
+         href="http://alteredqualia.com/three/examples/webgl_terrain_dynamic.html">http://alteredqualia.com/three/examples/webgl_terrain_dynamic.html</a>
+      <br><a href="http://wwwtyro.github.io/procedural.js/planet1/">http://wwwtyro.github.io/procedural.js/planet1/</a>
+   </p>
+   <p>
+      Actualmente se estan explorando las opciones de generación por procedimientos. Dado que la forma de una esfera de
+      poco detalle es poco maleable se esta explorando la posibilidad de generar terrenos encima de la figura principal,
+      dando más libertad en su generación.
+      Tambien se ha estado explorando las opciones de turbulencia para la nave en movimiento:
+   </p>
+   <iframe src="./nave_espacial_animada_movimiento/index.html" style="width:100%;height:400px;"></iframe>
+   <hr id="2">
+   <p>Para facilitar el desarollo del proyecto, lo he separado en otro repositorio:</p>
+   <a href="https://github.com/felipecuetor/poli_world_gen">https://github.com/felipecuetor/poli_world_gen</a>
+   <p>En este link se pueden observar los ultimos cambios que se han hecho sobre el codigo:</p>
+   <a
+      href="https://github.com/felipecuetor/poli_world_gen/commit/4799ca785ed1fd241af23326cfc176c333d6f872">https://github.com/felipecuetor/poli_world_gen/commit/4799ca785ed1fd241af23326cfc176c333d6f872</a>
+   <p>He estado trabajando en el desarollo del campo escalar de una esfera en javascript. Esto me permitirá generar un
+      sistema de colisión utilizando la distancia del centro de la esfera, tomando en cuenta la variación de distancias
+      de los distintos puntos.</p>
+   <p>En paralelo he estado trabajando en la nave y sus animaciones. He experimentado con posibles colores para la nave.
+      Y comence a generar el sistema de control de velocidad de la nave:</p>
+   <iframe src="./nave_espacial_animada_movimiento_2_v2/index.html" style="width:100%;height:400px;"></iframe>
+   <p>Para probar el control del movimiento, es necesario abrir el demo a continuación. Puedes controlar la velocidad de
+      la animación con flecha arriba o flecha abajo.
+   </p>
+   <hr>
+   <a href="./nave_espacial_animada_movimiento_2_v2/index.html">Demo control animación</a>
+   <p>El primer paso importante fue diseñar un sistema de generación de esferas que yo pudiese manipular libremente.
+      Adapte el sistema a la nave espacial existente a un esquema escalar de una esfere. La esfera es generada a partir
+      de direcciones polares, generando los triangulos del sistema.</p>
+   <iframe src="./nave_espacial_animada_movimiento_3_v3/index.html" style="width:100%;height:400px;"></iframe>
+   <hr id="3">
+   <p>Ya con las 2 partes funcionando el siguiente paso ha sido generar un terreno sobre el planeta. Utilizo una funcion
+      random que sumo al radio de la esfera en ciertos puntos, luego relaciono el numero randomizado obtenido con la
+      siguiente fila al completar un circulo. Aun hay muchos huecos en el modelo. Es necesario encontrar una forma de
+      conectar los vertices de los diferentes poligonos. Tambien comence el sistema de movimiento de la nave espacial,
+      aunque por una razon que aun no entiendo, no se mueve para adelante. Tambien comence el sistema de rotación de la
+      nave.
+   </p>
+   <hr>
+   <p>Dado que no he logrado generar un sistema de movimiento adecuado, he decido limitar el movimiento de la nave al
+      plano xy. El movimiento sobre el eje z lo realiza el asteroide hacia la nave, y cambia de ubicación con cada
+      ciclo. Se generó un sistema simple de colisión que detecta cuando la nave choca contra el asteriode utilizando la
+      posición xy de la nave cuando el asteroide completa su ciclo.</p>
+   <p>Para jugar el juego debes seleccionar el link y moverte con las teclas "wasd". El asteroide es generado por
+      procedimientos. El movimiento de la nave es con momentum por lo cual el jugador debe balancear el movimiento,
+      evitando que la nave se salga de la pantalla.
+   </p>
+   <a href="./nave_espacial_animada_movimiento_5_v3/index.html">Demo asteroide</a>
+   <iframe src="./nave_espacial_animada_movimiento_5_v3_noalert/index.html" style="width:100%;height:400px;"></iframe>
+   <hr id="4">
+   <p>La nueva version del juego tiene un menu principal para permitir iniciar el juego de forma adecuada. Solo se inica
+      el juego al presionar la barra de espacio. El juego se encarga de hacer seguimiento a los puntos que obtiene el
+      jugador.</p>
+   <p>El juego tambien tiene un aumento de dificultad al obtener mas puntos. La dificultad cambia la velocidad del
+      juego. Hay un limite de velocidad para asegurar que el juego nunca sea imposible.</p>
+   <p>Logré arreglar la generación de la geometría del asteroide cambiando la cantidad de vertices que tiene. También
+      cambié la definición del color a los poligonos. El color ahora depende de la distancia del centro de la esfera.
+      Esto hace que sea más facil ver la geometria del objeto.</p>
+   <p>También cambié los colores de la nave espacial, y agregué un propulsor.</p>
+   <p>A continuación encontraras la version final de este proyecto. (Se demora un momento cargando)</p>
+   <a href="./nave_espacial_animada_movimiento_6/index.html">Version Final</a>
+   <p>Para ver el codigo:</p>
+   <a href="https://github.com/felipecuetor/poli_world_gen">Codigo</a>
+</div>
