@@ -1,0 +1,45 @@
+<div class="col-lg-12">
+    <h6>Computacion Visual Interactiva-Ejemplo</h6>
+    <h4><a href="../index.html">Home</a>&gt; <a href="../blog.html">Blog</a>&gt; WebGL/Three.js
+        Planet</h4>
+    <iframe width="100%" height="500" src="./ejemplo_profundizacion/procedural-planet.html" frameborder="0"></iframe>
+    <a href="http://holgerl.github.io/procedural-planet/">http://holgerl.github.io/procedural-planet/</a>
+    <p>Encargada de agregar los elementos a la escena.
+        Aquí se puede observar que la luz que se observa en el planeta es renderizada por three.js
+        automaticamente.
+        Aqui también se crea y se agrega a la escena el planeta, dando el radio del planeta como un
+        parametro.
+        Por ultimo, el desarollador original planeaba generar, utilizando tecnicas de generación por
+        precedimientos, un skybox con estrellas.
+    </p>
+    <img src="./img_ejemplo_profundizacion/1.PNG"></img>
+    <p>Aquí el desarollador se encarga de generar la esfera del planeta.
+        Entre los paramentros entrega:
+        planetScalarField: El mapa de puntos sobre la esfera, generados con una función.
+        planetRadius: El radio del planeta
+        shaderMaterial: La textura del planeta, en una función callback.
+        maxDetail: Una constante que define la maxima calidad de la esfera.
+        true: Una function booleana que NO es utilizada en el objeto Sphere.
+    </p>
+    <img src="./img_ejemplo_profundizacion/2.PNG"></img>
+    <p>Fragment shader se encarga de juntar la informacion del mapa escalar y de la información de
+        la fuente de luz para calcular el color de cada texel.
+    </p>
+    <img src="./img_ejemplo_profundizacion/3.PNG"></img>
+    <img src="./img_ejemplo_profundizacion/4.PNG"></img>
+    <p>Metodos encargados de comunicarse con Three.js para entregarle la información correcta sobre
+        la textura de la esfera. Utiliza el mapa escalar generado al comienzo para realizar los
+        calculos y cambios necesarios.</p>
+    <img src="./img_ejemplo_profundizacion/5.PNG"></img>
+    <img src="./img_ejemplo_profundizacion/6.PNG"></img>
+    <img src="./img_ejemplo_profundizacion/7.PNG"></img>
+    <img src="./img_ejemplo_profundizacion/8.PNG"></img>
+    <p>El mapa escalar de la textura randomizada se genera por niveles. Cada nivel tiene una
+        resolución predefinida. Utilizando la funcion random4(Un generador automatico de vectores
+        aleatorios), genera los colores en una escala de grises utilizando rgb. Siempre y cuando los
+        3 numeros sean iguales siempre sera un gris.</p>
+    <img src="./img_ejemplo_profundizacion/9.PNG"></img>
+    <img src="./img_ejemplo_profundizacion/10.PNG"></img>
+    <img style="display:inline;width:50%;" src="./img_ejemplo_profundizacion/11.png"></img>
+
+</div>

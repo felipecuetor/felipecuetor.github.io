@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="./index.js"></script>
+        <link rel="stylesheet" type="text/css" href="./index.css">
+        <link rel="icon" href="./favicon.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="description" content="Felipe Cueto is a computer science graduate, programmer, with a wide set of skillsets. Here, you can check his CV, his blog, or his development notes.">
+        <meta name="robots" content="index, nofollow">
+        <meta name="revisit-after" content="30 days">
+        <link rel="manifest" href="/manifest.json">
+        <meta name="google-site-verification" content="qE2KfSz10-D9J6EJp-8T9QBwQidLw0iIE_aA-IZp7BY" />
+        <title>Felipe Cueto</title>
+    </head>
+    <header id="MainHeader">
+        <span class="MainMenuToggle" onclick="toggleMainMenu()">&#9776;</span>
+    </header>
+    <body>
+        <div id="MainMenu">
+            <div id="MainMenuEmptySpace"></div>
+            <button class="MainMenuOption" onclick="setFrame('./app/home/index.html')">Info</button>
+            <button class="MainMenuOption" onclick="setFrame('./app/blog/index.html')">Blog</button>
+			<button class="MainMenuOption" onclick="setFrame('./app/portafolio/index.html')">Portafolio</button>
+            <a target="_blank" href="https://www.linkedin.com/in/felipe-cueto-8bb30197/"><button class="MainMenuOption">LinkedIn</button></a>
+            <a target="_blank" href="https://twitter.com/felipecuetor"><button class="MainMenuOption">Twitter</button></button></a>
+            <a target="_blank" href="https://goo.gl/photos/SU4FXyA4NYK8xpNt5"><button class="MainMenuOption">Fotos Ciudad Perdida</button></a>
+            <a target="_blank" href="https://goo.gl/photos/KXnK9P1wr3evHgoW9"><button class="MainMenuOption">Fotos Caño Cristales</button></a>
+            <a target="_blank" href="https://goo.gl/photos/CFy36QgD3g4GbfgZ7"><button class="MainMenuOption">Fotos Cocuy</button></a>
+            <a target="_blank" href="https://nimblegameframework.github.io/index.html"><button class="MainMenuOption">Web-RPG-Framework</button></a>
+        </div>
+        <iframe id="DynamicFrame" frameBorder="0" src="./app/home/index.html"></iframe>
+    </body>
+</html>
