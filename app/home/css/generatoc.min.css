@@ -1,0 +1,29 @@
+body {
+    --toc-color: #1b81b8
+}
+
+#toc {
+}
+
+#toc a {
+    display: block;
+    color: #0000EE;
+}
+
+#toc a:visited {
+    color: #551A8B;
+}
+
+#toc a:hover {
+    padding: 0
+}
+
+#toc a:hover {
+    text-decoration-line: underline;
+}
+
+#toc ul {
+}
+
+#toc li {
+}

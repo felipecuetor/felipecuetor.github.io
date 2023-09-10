@@ -14,10 +14,11 @@ body {
   margin-left: 0px;
   margin-right: 0px;
   background-color: #161b33;
-  color: #7e8287;
+  color: lightgray;
   padding: 9px;
   width: 100%;
   border: 0px;
+  font-family: sans-serif;
 }
 
 .MainMenuToggle:hover {
